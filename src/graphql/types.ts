@@ -119,6 +119,43 @@ export type DashboardDealsChartQuery = {
   };
 };
 
+export type DashboardLatestActivitiesDealsQueryVariables = Types.Exact<{
+  filter: Types.DealFilter;
+  sorting?: Types.InputMaybe<Array<Types.DealSort> | Types.DealSort>;
+  paging?: Types.InputMaybe<Types.OffsetPaging>;
+}>;
+
+export type DashboardLatestActivitiesDealsQuery = {
+  deals: Pick<Types.DealConnection, "totalCount"> & {
+    nodes: Array<
+      Pick<Types.Deal, "id" | "title" | "createdAt"> & {
+        stage?: Types.Maybe<Pick<Types.DealStage, "id" | "title">>;
+        company: Pick<Types.Company, "id" | "name" | "avatarUrl">;
+      }
+    >;
+  };
+};
+
+export type DashboardLatestActivitiesAuditsQueryVariables = Types.Exact<{
+  filter: Types.AuditFilter;
+  sorting?: Types.InputMaybe<Array<Types.AuditSort> | Types.AuditSort>;
+  paging?: Types.InputMaybe<Types.OffsetPaging>;
+}>;
+
+export type DashboardLatestActivitiesAuditsQuery = {
+  audits: Pick<Types.AuditConnection, "totalCount"> & {
+    nodes: Array<
+      Pick<
+        Types.Audit,
+        "id" | "action" | "targetEntity" | "targetId" | "createdAt"
+      > & {
+        changes: Array<Pick<Types.AuditChange, "field" | "from" | "to">>;
+        user?: Types.Maybe<Pick<Types.User, "id" | "name" | "avatarUrl">>;
+      }
+    >;
+  };
+};
+
 export type DashboardCalendarUpcomingEventsQueryVariables = Types.Exact<{
   filter: Types.EventFilter;
   sorting?: Types.InputMaybe<Array<Types.EventSort> | Types.EventSort>;
@@ -141,4 +178,40 @@ export type DashboardTotalCountsQuery = {
   companies: Pick<Types.CompanyConnection, "totalCount">;
   contacts: Pick<Types.ContactConnection, "totalCount">;
   deals: Pick<Types.DealConnection, "totalCount">;
+};
+
+export type TaskStagesQueryVariables = Types.Exact<{
+  filter: Types.TaskStageFilter;
+  sorting?: Types.InputMaybe<Array<Types.TaskStageSort> | Types.TaskStageSort>;
+  paging: Types.OffsetPaging;
+}>;
+
+export type TaskStagesQuery = {
+  taskStages: Pick<Types.TaskStageConnection, "totalCount"> & {
+    nodes: Array<Pick<Types.TaskStage, "id" | "title">>;
+  };
+};
+
+export type TasksQueryVariables = Types.Exact<{
+  filter: Types.TaskFilter;
+  sorting?: Types.InputMaybe<Array<Types.TaskSort> | Types.TaskSort>;
+  paging: Types.OffsetPaging;
+}>;
+
+export type TasksQuery = {
+  tasks: Pick<Types.TaskConnection, "totalCount"> & {
+    nodes: Array<
+      Pick<
+        Types.Task,
+        | "id"
+        | "title"
+        | "description"
+        | "dueDate"
+        | "completed"
+        | "stageId"
+        | "createdAt"
+        | "updatedAt"
+      > & { users: Array<Pick<Types.User, "id" | "name" | "avatarUrl">> }
+    >;
+  };
 };
