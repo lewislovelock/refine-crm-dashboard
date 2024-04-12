@@ -21,9 +21,9 @@ import {
   // CompanyListPage,
   // DashboardPage,
   LoginPage,
-  // TasksCreatePage,
-  // TasksEditPage,
-  // TasksListPage,
+  TasksCreatePage,
+  TasksEditPage,
+  TasksListPage,
 } from "@/routes";
 
 import "@refinedev/antd/dist/reset.css";
@@ -32,7 +32,6 @@ import { Layout } from "./components/layout";
 import { RegisterPage } from "./routes/register";
 import { ForgotPasswordPage } from "./routes/forgot-password";
 import { UpdatePasswordPage } from "./routes/update-password";
-import { TasksListPage } from "./routes/tasks/list";
 
 const App = () => {
   return (
@@ -77,8 +76,8 @@ const App = () => {
                       </TasksListPage>
                     }
                   >
-                    {/* <Route path="new" element={<TasksCreatePage />}/> */}
-                    {/* <Route path="edit/:id" element={<TasksEditPage />} /> */}
+                    <Route path="new" element={<TasksCreatePage />}/>
+                    <Route path="edit/:id" element={<TasksEditPage />} />
                   </Route>
 
                   <Route path="*" element={<ErrorComponent />} />

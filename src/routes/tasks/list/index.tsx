@@ -23,7 +23,7 @@ type Task = GetFieldsFromList<TasksQuery>;
 type TaskStage = GetFieldsFromList<TaskStagesQuery> & { tasks: Task[] };
 
 export const TasksListPage = ({ children }: React.PropsWithChildren) => {
-  const replace = useNavigation();
+  const { replace } = useNavigation();
 
   const { data: stages, isLoading: isLoadingStages } = useList<TaskStage>({
     resource: "taskStages",
