@@ -16,10 +16,10 @@ import { App as AntdApp, ConfigProvider } from "antd";
 import { resources } from "@/config/resources";
 import { authProvider, dataProvider, liveProvider } from "@/providers";
 import {
-  // CompanyCreatePage,
-  // CompanyEditPage,
-  // CompanyListPage,
-  // DashboardPage,
+  CompanyCreatePage,
+  CompanyEditPage,
+  CompanyListPage,
+  DashboardPage,
   LoginPage,
   TasksCreatePage,
   TasksEditPage,
@@ -27,7 +27,6 @@ import {
 } from "@/routes";
 
 import "@refinedev/antd/dist/reset.css";
-import { DashboardPage } from "./routes/dashboard";
 import { Layout } from "./components/layout";
 import { RegisterPage } from "./routes/register";
 import { ForgotPasswordPage } from "./routes/forgot-password";
@@ -78,6 +77,12 @@ const App = () => {
                   >
                     <Route path="new" element={<TasksCreatePage />}/>
                     <Route path="edit/:id" element={<TasksEditPage />} />
+                  </Route>
+
+                  <Route path="/companies">
+                    <Route index element={<CompanyListPage />} />
+                    <Route path="new" element={<CompanyCreatePage />} />
+                    <Route path="edit/:id" element={<CompanyEditPage />} />
                   </Route>
 
                   <Route path="*" element={<ErrorComponent />} />

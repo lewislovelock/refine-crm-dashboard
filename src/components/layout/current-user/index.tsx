@@ -46,7 +46,7 @@ export const CurrentUser = () => {
           block
           onClick={() => setOpened(true)}
         >
-          Account Settings
+          Account settings
         </Button>
       </div>
     </div>
@@ -62,7 +62,7 @@ export const CurrentUser = () => {
         overlayStyle={{ zIndex: 999 }}
       >
         <CustomAvatar
-          name={user?.name || ""}
+          name={user?.name}
           src={user?.avatarUrl}
           size="default"
           style={{ cursor: "pointer" }}

@@ -19,7 +19,7 @@ type Props = {
   opened: boolean;
   setOpened: (opened: boolean) => void;
   userId: string;
-}
+};
 
 export const AccountSettings = ({ opened, setOpened, userId }: Props) => {
   const { saveButtonProps, formProps, queryResult } = useForm<
