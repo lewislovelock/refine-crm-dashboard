@@ -15,6 +15,24 @@ A React Framework for building internal tools, admin panels, dashboards & B2B ap
 
 Refine's hooks and components simplifies the development process and eliminates the repetitive tasks by providing industry-standard solutions for crucial aspects of a project, including authentication, access control, routing, networking, state management, and i18n.
 
+## Project Overview
+
+### Login page
+
+![Project Screenshot1](./public/Auth.jpeg)
+
+### Dashboard page
+
+![Project Screenshot1](./public/Dashboard.jpeg)
+
+### Companies page
+
+![Project Screenshot1](./public/Companies.jpeg)
+
+### Tasks page
+
+![Project Screenshot1](./public/Tasks.jpeg)
+
 ## Available Scripts
 
 ### Running the development server.

@@ -61,7 +61,7 @@ export const TasksEditPage = () => {
     >
       <StageForm isLoading={isLoading} />
       <Accordion
-        accodionKey="description"
+        accordionKey="description"
         activeKey={activeKey}
         setActive={setActiveKey}
         fallback={<DescriptionHeader description={description} />}
@@ -75,7 +75,7 @@ export const TasksEditPage = () => {
         />
       </Accordion>
       <Accordion
-        accodionKey="due-date"
+        accordionKey="due-date"
         activeKey={activeKey}
         setActive={setActiveKey}
         fallback={<DueDateHeader dueData={dueDate} />}
@@ -89,7 +89,7 @@ export const TasksEditPage = () => {
         />
       </Accordion>
       <Accordion
-        accodionKey="users"
+        accordionKey="users"
         activeKey={activeKey}
         setActive={setActiveKey}
         fallback={<UsersHeader users={users} />}
